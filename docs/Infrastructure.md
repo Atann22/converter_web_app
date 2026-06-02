@@ -31,7 +31,7 @@ Status:
 Tujuan:
 
 * Menjalankan API aplikasi.
-* Menangani proses convert dan compress gambar.
+* Menangani proses convert dan compress gambar dan video
 
 Technology:
 
