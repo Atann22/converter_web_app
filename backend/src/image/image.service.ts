@@ -33,6 +33,24 @@ export class ImageService {
             }
 
             const processedBuffer = await imageProcessing.toBuffer();
+                    width: payload.customWidth,
+                    height: payload.customHeight,
+                    fit: 'cover',
+                });
+            }
+
+            let processedBuffer = await imageProcessing.toBuffer();
+            // Logika Smart Compress
+            if (payload.action === ActionType.COMPRESS) {
+                // Ukuran asli
+                const originalSize = file.size;
+                // Jika hasil kompres lebih besar atau sama dengan aslinya
+                if (processedBuffer.length >= originalSize) {
+                    // Kembalikan gambar asli 
+                    processedBuffer = file.buffer;
+                }
+            }
+
             const baseName = file.originalname.substring(0, file.originalname.lastIndexOf('.')) || file.originalname;
             
             return {
