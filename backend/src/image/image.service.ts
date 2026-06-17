@@ -26,13 +26,6 @@ export class ImageService {
             }
             else if (payload.action === ActionType.RESIZE && (payload.customWidth || payload.customHeight)) {
                 imageProcessing = imageProcessing.resize({
-                width: payload.customWidth,
-                height: payload.customHeight,
-                fit: 'cover',
-                });
-            }
-
-            const processedBuffer = await imageProcessing.toBuffer();
                     width: payload.customWidth,
                     height: payload.customHeight,
                     fit: 'cover',
