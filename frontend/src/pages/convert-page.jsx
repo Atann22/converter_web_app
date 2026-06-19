@@ -106,7 +106,7 @@ export default function ConvertPage() {
                                 {getConvertedFileName()}
                             </span>
 
-                            <span className="text-sm sm:text-base font-semibold text-slate-400 dark:text-slate-500">Completed</span>
+                            <span className="text-sm sm:text-base font-bold text-green-800 dark:text-green-700">Completed</span>
                         </div>
                     ) : status !== null ? (
                         <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-indigo-200 dark:border-indigo-900 rounded-2xl bg-indigo-50/30 dark:bg-indigo-950/20 p-6">
@@ -164,7 +164,9 @@ export default function ConvertPage() {
                             <button
                                 onClick={handleConvert}
                                 disabled={!file || !format || status !== null}
-                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all ${(!file || !format) ? 'bg-slate-300 dark:bg-slate-800 cursor-not-allowed' : 'bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 shadow-md shadow-indigo-100 dark:shadow-none'}`}
+                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all cursor-pointer ${(!file || !format) 
+                                    ? 'bg-slate-300 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed' 
+                                    : 'bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 shadow-md shadow-indigo-100 dark:shadow-none'}`}
                             >
                                 Convert
                             </button>
