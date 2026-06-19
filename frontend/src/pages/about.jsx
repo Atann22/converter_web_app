@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 py-12 sm:py-20 -mt-6 sm:-mt-15">
             {/* --- DESCRIPTION --- */}
             <section className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-                <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-slate-800 dark:text-slate-100">
+                <h1 className="text-2xl sm:text-4xl font-bold mb-7 text-slate-800 dark:text-slate-100">
                     About Us
                 </h1>
 

@@ -126,7 +126,7 @@ export default function ResizePage() {
                             <span className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 mb-1 text-center px-2 truncate max-w-full">
                                 {getResizedFileName()}
                             </span>
-                            <span className="text-sm sm:text-base font-semibold text-slate-400 dark:text-slate-500">Completed</span>
+                            <span className="text-sm sm:text-base font-bold text-green-800 dark:text-green-700">Completed</span>
                         </div>
                     ) : status !== null ? (
                         <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-indigo-200 dark:border-indigo-900 rounded-2xl bg-indigo-50/30 dark:bg-indigo-950/20">
@@ -220,7 +220,7 @@ export default function ResizePage() {
                             <button
                                 onClick={handleResize}
                                 disabled={!file || !width || !height || status !== null}
-                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all ${(!file || !width || !height) 
+                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all cursor-pointer ${(!file || !width || !height) 
                                     ? 'bg-slate-300 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed' 
                                     : 'bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 shadow-md shadow-indigo-100 dark:shadow-none'}`}
                             >
@@ -232,7 +232,7 @@ export default function ResizePage() {
                             <button 
                                 type="button" 
                                 onClick={handleResetAll} 
-                                className="w-full bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight"
+                                className="w-full bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight cursor-pointer"
                             >
                                 Resize Another Image
                             </button>

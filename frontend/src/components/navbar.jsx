@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import MyLogo from "../assets/react.svg"
+import LogoLight from "../assets/logo2.svg"
+import LogoDark from "../assets/logo3.svg"
 
 export default function Navbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -17,9 +18,9 @@ export default function Navbar() {
     return (
         <nav className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-lg dark:bg-slate-900 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                <div className="font-bold text-2xl text-indigo-600 dark:text-indigo-400 flex items-center gap-2 cursor-pointer" onClick={() => navigateTo('/')}>
-                    <img src={MyLogo} alt="FixPict" className="w-10" />
-                    <span className="tracking-tight">FixPict</span>
+                <div className="font-bold text-2xl text-slate-900 dark:text-slate-100 flex items-center gap-1 cursor-pointer" onClick={() => navigateTo('/')}>
+                    <img src={LogoLight} alt="FixPict" className="w-35 block dark:hidden" />
+                    <img src={LogoDark} alt="FixPict" className="w-35 hidden dark:block" />
                 </div>
                 <div className="hidden md:flex items-center gap-6 font-medium text-slate-600 dark:text-slate-300">
                     <button onClick={() => navigateTo('/')} className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">Home</button>
