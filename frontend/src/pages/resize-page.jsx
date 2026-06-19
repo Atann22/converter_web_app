@@ -108,30 +108,30 @@ export default function ResizePage() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-6 sm:py-12">
-            <h1 className="text-lg sm:text-3xl font-bold mb-1 text-slate-800 text-center">Resize Image</h1>
-            <p className="text-xs mb-5 sm:text-sm font-medium text-slate-600 text-center">
+        <div className="max-w-4xl mx-auto px-4 py-6 sm:py-13 -mt-6 sm:-mt-8">
+            <h1 className="text-lg sm:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-100 text-center">Resize Image</h1>
+            <p className="text-xs mb-5 sm:text-sm font-medium text-slate-600 dark:text-slate-400 text-center">
                 Upload an image and resize it using presets or custom dimensions in seconds.
             </p>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-4 sm:mt-9">
 
                 {/* --- LEFT --- */}
                 <div>
                     {resultUrl ? (
-                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-slate-200 rounded-2xl bg-slate-50/50 p-6">
-                            <div className="w-full max-h-45 overflow-hidden rounded-xl flex items-center justify-center mb-4 shadow-sm bg-white border border-slate-100 p-1">
+                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-slate-200 dark:border-slate-700 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40 p-6">
+                            <div className="w-full max-h-45 overflow-hidden rounded-xl flex items-center justify-center mb-4 shadow-sm bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-1">
                                 <img src={preview} alt="Preview" className="max-w-full max-h-42.5 object-contain rounded-lg" />
                             </div>
-                            <span className="text-xs sm:text-sm font-bold text-slate-600 mb-1 text-center px-2 truncate max-w-full">
+                            <span className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 mb-1 text-center px-2 truncate max-w-full">
                                 {getResizedFileName()}
                             </span>
-                            <span className="text-sm sm:text-base font-semibold text-slate-400">Completed</span>
+                            <span className="text-sm sm:text-base font-semibold text-slate-400 dark:text-slate-500">Completed</span>
                         </div>
                     ) : status !== null ? (
-                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-indigo-200 rounded-2xl bg-indigo-50/30 p-6">
-                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600 mb-4"></div>
-                            <span className="text-sm font-semibold text-indigo-600 animate-pulse">
+                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-indigo-200 dark:border-indigo-900 rounded-2xl bg-indigo-50/30 dark:bg-indigo-950/20">
+                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600 dark:border-indigo-400 mb-4"></div>
+                            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 animate-pulse">
                                 {dynamicMessage}
                             </span>
                         </div>
@@ -148,48 +148,48 @@ export default function ResizePage() {
                 </div>
 
                 {/* --- RIGHT --- */}
-                <div className="flex flex-col justify-center pt-6 md:pt-4 border-t md:border-t-0 md:border-l md:pl-8 border-slate-100">
+                <div className="flex flex-col justify-center pt-6 md:pt-4 border-t md:border-t-0 md:border-l md:pl-8 border-slate-100 dark:border-slate-800">
                     {!resultUrl ? (
                         <div className="space-y-5">
                             <div>
                                 <div className="flex items-center justify-between gap-3 text-center">
                                     <div className="flex-1">
-                                        <label className="block text-[11px] font-bold text-slate-500 mb-1 tracking-wide">Width (px)</label>
+                                        <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1 tracking-wide">Width (px)</label>
                                         <input
                                             type="number"
                                             value={width}
                                             onChange={(e) => { setWidth(e.target.value); setPreset(""); }}
                                             placeholder="Input..."
-                                            className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-medium text-slate-700 outline-none focus:border-indigo-500 transition-all shadow-sm"
+                                            className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 outline-none focus:border-indigo-500 dark:focus:border-indigo-500 transition-all shadow-sm"
                                         />
                                     </div>
                                     <span className="text-slate-400 font-bold self-end pb-2.5 text-xs select-none">✕</span>
                                     <div className="flex-1">
-                                        <label className="block text-[11px] font-bold text-slate-500 mb-1 tracking-wide">Height (px)</label>
+                                        <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1 tracking-wide">Height (px)</label>
                                         <input
                                             type="number"
                                             value={height}
                                             onChange={(e) => { setHeight(e.target.value); setPreset(""); }}
                                             placeholder="Input..."
-                                            className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-medium text-slate-700 outline-none focus:border-indigo-500 transition-all shadow-sm"
+                                            className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 outline-none focus:border-indigo-500 dark:focus:border-indigo-500 transition-all shadow-sm"
                                         />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="flex items-center py-1">
-                                <div className="grow border-t border-slate-100"></div>
-                                <span className="shrink mx-3 text-[10px] font-bold text-slate-400 tracking-wider">OR</span>
-                                <div className="grow border-t border-slate-100"></div>
+                                <div className="grow border-t border-slate-100 dark:border-slate-800"></div>
+                                <span className="shrink mx-3 text-[10px] font-bold text-slate-400 dark:text-slate-500 tracking-wider">OR</span>
+                                <div className="grow border-t border-slate-100 dark:border-slate-800"></div>
                             </div>
 
                             <div className="relative inline-block w-full">
                                 <button
                                     type="button"
                                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-slate-500 shadow-sm outline-none hover:border-slate-300 transition-all flex items-center justify-between"
+                                    className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 shadow-sm outline-none hover:border-slate-300 dark:hover:border-slate-700 transition-all flex items-center justify-between cursor-pointer"
                                 >
-                                    <span className={preset ? "font-bold text-slate-700" : ""}>
+                                    <span className={preset ? "font-bold text-slate-700 dark:text-slate-200" : ""}>
                                         {preset ? preset : "Chose Presets"}
                                     </span>
                                     <span className="text-slate-400 text-xs transition-transform duration-200" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
@@ -198,15 +198,15 @@ export default function ResizePage() {
                                 {isDropdownOpen && (
                                     <>
                                         <div className="fixed inset-0 z-10" onClick={() => setIsDropdownOpen(false)}></div>
-                                        <div className="absolute left-0 mt-1.5 w-full bg-white rounded-xl shadow-xl border border-slate-100 py-1.5 z-20 text-left max-h-48 overflow-y-auto">
+                                        <div className="absolute left-0 mt-1.5 w-full bg-white dark:bg-slate-950 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 py-1.5 z-20 text-left max-h-48 overflow-y-auto">
                                             {presetOptions.map((opt) => (
                                                 <button
                                                     key={opt.label}
                                                     type="button"
                                                     onClick={() => handlePresetChange(opt)}
-                                                    className={`w-full text-left px-4 py-2.5 text-xs sm:text-sm transition-all block ${preset === opt.label
-                                                        ? 'bg-indigo-50 text-indigo-600 font-bold'
-                                                        : 'text-slate-600 hover:bg-slate-50'
+                                                    className={`w-full text-left px-4 py-2.5 text-xs sm:text-sm transition-all block cursor-pointer ${preset === opt.label
+                                                        ? 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 font-bold'
+                                                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900'
                                                         }`}
                                                 >
                                                     {opt.label}
@@ -220,18 +220,26 @@ export default function ResizePage() {
                             <button
                                 onClick={handleResize}
                                 disabled={!file || !width || !height || status !== null}
-                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all ${(!file || !width || !height) ? 'bg-slate-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 shadow-md shadow-indigo-100'}`}
+                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all ${(!file || !width || !height) 
+                                    ? 'bg-slate-300 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed' 
+                                    : 'bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 shadow-md shadow-indigo-100 dark:shadow-none'}`}
                             >
                                 Resize
                             </button>
                         </div>
                     ) : (
                         <div className="flex flex-col gap-3.5 w-full max-w-60 mx-auto items-center">
-                            <button type="button" onClick={handleResetAll} className="w-full bg-white hover:bg-slate-50 text-slate-500 font-medium py-3 px-4 border border-slate-200 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight">Resize Another Image</button>
+                            <button 
+                                type="button" 
+                                onClick={handleResetAll} 
+                                className="w-full bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight"
+                            >
+                                Resize Another Image
+                            </button>
                             <a
                                 href={resultUrl || "#"}
                                 download={getResizedFileName()}
-                                className="w-full bg-green-700 hover:bg-green-800 text-white font-medium py-3 px-4 border border-slate-200 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
+                                className="w-full bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-500 text-white font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
                             >
                                 <span>Download</span>
                                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">

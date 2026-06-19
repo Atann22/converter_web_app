@@ -9,14 +9,14 @@ export default function AboutPage() {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 py-12 sm:py-20 -mt-6 sm:-mt-15">
             {/* --- DESCRIPTION --- */}
-            <section className="text-center max-w-2xl mx-auto mb-16 sm:mb-25">
-                <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-slate-800">
+            <section className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+                <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-slate-800 dark:text-slate-100">
                     About Us
                 </h1>
 
-                <div className="space-y-5 text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
+                <div className="space-y-5 mx-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
                     <p>
                         ( Project Name ) is a web-based image tool designed to help users convert, compress, and resize images quickly and easily.
                     </p>
@@ -34,14 +34,14 @@ export default function AboutPage() {
 
             {/* --- TEAM --- */}
             <section className="text-center">
-                <h2 className="text-xl sm:text-3xl font-bold mb-12 text-slate-800">
+                <h2 className="text-xl sm:text-3xl font-bold mb-12 text-slate-800 dark:text-slate-100">
                     Meet The Team
                 </h2>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 justify-center">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="flex flex-col items-center group">
-                            <div className="w-24 h-24 sm:w-28 sm:h-28 aspect-square shrink-0 rounded-full border-2 border-slate-200 bg-slate-50 flex items-center justify-center mb-4 text-slate-400">
+                            <div className="w-24 h-24 sm:w-28 sm:h-28 aspect-square shrink-0 rounded-full border-2 border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex items-center justify-center mb-4 text-slate-400 dark:text-slate-500">
                                 <svg
                                     className="w-12 h-12"
                                     fill="none"
@@ -57,10 +57,10 @@ export default function AboutPage() {
                                 </svg>
                             </div>
 
-                            <h3 className="text-sm sm:text-base font-bold text-slate-800">
+                            <h3 className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200">
                                 {member.name}
                             </h3>
-                            <p className="text-xs font-medium text-slate-500 mt-0.5">
+                            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">
                                 {member.role}
                             </p>
 

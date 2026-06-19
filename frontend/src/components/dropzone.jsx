@@ -3,7 +3,7 @@ import LoadingState from "./loading-state";
 
 const max_size = 10 * 1024 * 1024
 
-export default function Dropzone({ selectedFile, previewUrl, status, fileSize, onFileSelected, onReset }) {
+export default function Dropzone({ selectedFile, previewUrl, status, fileSize, loadingMessage, onFileSelected, onReset }) {
     const fileInputRef = useRef(null)
 
     const validateAndProcess = (file) => {
@@ -51,7 +51,7 @@ export default function Dropzone({ selectedFile, previewUrl, status, fileSize, o
                         onDragOver={(e) => e.preventDefault()}
                         onDrop={handleDrop}
                         onClick={() => fileInputRef.current.click()}
-                        className="border-2 border-dashed border-slate-300 hover:border-indigo-500 bg-slate-50 hover:bg-indigo-50/30 rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center cursor-pointer transition-all h-60 sm:h-64 text-center group"
+                        className="border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-400 bg-slate-50 dark:bg-slate-900 hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center cursor-pointer transition-all h-60 sm:h-64 text-center group"
                     >
                         <input
                             type="file"
@@ -65,21 +65,21 @@ export default function Dropzone({ selectedFile, previewUrl, status, fileSize, o
                             className="hidden"
                         />
                         <span className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform">📁</span>
-                        <p className="text-xs sm:text-sm font-medium text-slate-600">
+                        <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300">
                             Drag & drop your image here, or <span className="text-indigo-600 underline">select image</span>
                         </p>
-                        <p className="text-[11px] sm:text-xs text-slate-400 mt-2">Supported formats: JPEG, JPG, PNG, WEBP</p>
-                        <p className="text-[11px] sm:text-xs text-slate-400 mt-2">Maximum file size: 10 MB</p>
+                        <p className="text-[11px] sm:text-xs text-slate-400 mt-2 dark:text-slate-500">Supported formats: JPEG, JPG, PNG, WEBP</p>
+                        <p className="text-[11px] sm:text-xs text-slate-400 mt-2 dark:text-slate-500">Maximum file size: 10 MB</p>
                     </div>
                 ) : (
-                    <div className="border border-slate-200 rounded-xl p-4 flex flex-col items-center bg-slate-50 h-60 sm:h-64 relative justify-center shadow-inner">
+                    <div className="border border-slate-200 dark:border-slate-800 rounded-xl p-4 flex flex-col items-center bg-slate-50 dark:bg-slate-900 h-60 sm:h-64 relative justify-center shadow-inner">
                         <img src={previewUrl} alt="Preview" className="max-h-full max-w-full object-contain rounded-lg" />
                         <button onClick={onReset} className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 shadow-md transition-colors">
                             ✕
                         </button>
-                        <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm p-2 rounded border border-slate-200 text-[11px] sm:text-xs flex justify-between gap-2">
+                        <div className="absolute bottom-3 left-3 right-3 bg-white/95 dark:bg-slate-950/90 backdrop-blur-sm p-2 rounded border border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs flex justify-between gap-2 text-slate-700 dark:text-slate-300">
                             <span className="truncate font-medium max-w-[60%]">{selectedFile.name}</span>
-                            <span className="text-slate-500 shrink-0">{fileSize ? fileSize : formatSizeDynamically(selectedFile.size)}</span>
+                            <span className="text-slate-500 dark:text-slate-400 shrink-0">{fileSize ? fileSize : formatSizeDynamically(selectedFile.size)}</span>
                         </div>
                     </div>
                 )}
