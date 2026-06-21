@@ -7,7 +7,6 @@ import ConvertPage from './pages/convert-page.jsx'
 import Footer from './components/footer.jsx'
 import CompressPage from './pages/compress-page.jsx'
 import ResizePage from './pages/resize-page.jsx'
-import AboutPage from './pages/about.jsx'
 import DarkModeToggle from './components/darkMode.jsx'
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
           <Route path="/convert" element={<ConvertPage />} />
           <Route path='/compress' element={<CompressPage />} />
           <Route path='/resize' element={<ResizePage />} />
-          <Route path='/about' element={<AboutPage />} />
         </Routes>
       </main>
       <Footer />
