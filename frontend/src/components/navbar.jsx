@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import LogoLight from "../assets/logo2.svg"
-import LogoDark from "../assets/logo3.svg"
+import LogoLight from "../assets/logo1.png"
+import LogoDark from "../assets/logo2.png"
 
 export default function Navbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -18,7 +18,7 @@ export default function Navbar() {
     return (
         <nav className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-lg dark:bg-slate-900 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                <div className="font-bold text-2xl text-slate-900 dark:text-slate-100 flex items-center gap-1 cursor-pointer" onClick={() => navigateTo('/')}>
+                <div className="cursor-pointer" onClick={() => navigateTo('/')}>
                     <img src={LogoLight} alt="FixPict" className="w-35 block dark:hidden" />
                     <img src={LogoDark} alt="FixPict" className="w-35 hidden dark:block" />
                 </div>
@@ -30,13 +30,12 @@ export default function Navbar() {
                         </button>
                         {dropdownOpen && (
                             <div className="absolute right-0 mt-1 w-48 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 rounded-lg shadow-lg py-1 flex flex-col text-left animate-in fade-in slide-in-from-top-1">
-                                <button onClick={() => navigateTo('/convert')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Convert Image</button>
-                                <button onClick={() => navigateTo('/compress')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Compress Image</button>
-                                <button onClick={() => navigateTo('/resize')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Social Resize</button>
+                                <button onClick={() => navigateTo('/convert')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Converter</button>
+                                <button onClick={() => navigateTo('/compress')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Compressor</button>
+                                <button onClick={() => navigateTo('/resize')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Resizer</button>
                             </div>
                         )}
                     </div>
-                    <button onClick={() => navigateTo('/about')} className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">About</button>
                 </div>
                 <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
