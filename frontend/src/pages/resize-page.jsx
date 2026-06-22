@@ -52,7 +52,8 @@ export default function ResizePage() {
             formData.append("customHeight", height)
             formData.append("action", "resize")
 
-            const BACKEND_URL = "http://localhost:3000/api/v1/images/process"
+            const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api/v1/images/process` 
+
 
             const response = await axios.post(BACKEND_URL, formData, {
                 responseType: "blob",

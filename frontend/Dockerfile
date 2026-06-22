@@ -2,11 +2,11 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY image_converter/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY image_converter .
+COPY . .
 
 EXPOSE 5173
 
