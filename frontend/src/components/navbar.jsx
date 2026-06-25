@@ -18,25 +18,41 @@ export default function Navbar() {
     return (
         <nav className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-lg dark:bg-slate-900 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                <div className="cursor-pointer" onClick={() => navigateTo('/')}>
-                    <img src={LogoLight} alt="FixPict" className="w-35 block dark:hidden" />
-                    <img src={LogoDark} alt="FixPict" className="w-35 hidden dark:block" />
+                
+                <div className="cursor-pointer shrink-0" onClick={() => navigateTo('/')}>
+                    <img src={LogoLight} alt="FixPict" className="w-32 block dark:hidden" />
+                    <img src={LogoDark} alt="FixPict" className="w-32 hidden dark:block" />
                 </div>
-                <div className="hidden md:flex items-center gap-6 font-medium text-slate-600 dark:text-slate-300">
-                    <button onClick={() => navigateTo('/')} className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">Home</button>
-                    <div className="relative">
-                        <button onClick={() => setDropdownOpen(!dropdownOpen)} className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-0.5 py-1 cursor-pointer">
-                            Tools <span>▾</span>
+                
+                <div className="hidden md:flex items-center gap-8 font-medium text-[18px] text-slate-600 dark:text-slate-300 h-16">
+                    <button 
+                        onClick={() => navigateTo('/')} 
+                        className="h-full flex items-center hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer border-b-2 border-transparent hover:border-indigo-600 dark:hover:border-indigo-400 transition-colors"
+                    >
+                        Home
+                    </button>
+                    
+                    <div className="relative h-full flex items-center">
+                        <button 
+                            onClick={() => setDropdownOpen(!dropdownOpen)} 
+                            className="h-full flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer border-b-2 border-transparent hover:border-indigo-600 dark:hover:border-indigo-400 transition-colors"
+                        >
+                            Tools 
+                            <svg className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
                         </button>
+                        
                         {dropdownOpen && (
-                            <div className="absolute right-0 mt-1 w-48 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 rounded-lg shadow-lg py-1 flex flex-col text-left animate-in fade-in slide-in-from-top-1">
-                                <button onClick={() => navigateTo('/convert')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Converter</button>
-                                <button onClick={() => navigateTo('/compress')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Compressor</button>
-                                <button onClick={() => navigateTo('/resize')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-left text-xs sm:text-sm cursor-pointer">Image Resizer</button>
+                            <div className="absolute top-16 right-0 w-48 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 rounded-b-lg shadow-lg py-2 flex flex-col text-left animate-in fade-in slide-in-from-top-2 z-50">
+                                <button onClick={() => navigateTo('/convert')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 text-left text-sm cursor-pointer transition-colors">Image Converter</button>
+                                <button onClick={() => navigateTo('/compress')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 text-left text-sm cursor-pointer transition-colors">Image Compressor</button>
+                                <button onClick={() => navigateTo('/resize')} className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 text-left text-sm cursor-pointer transition-colors">Image Resizer</button>
                             </div>
                         )}
                     </div>
                 </div>
+
                 <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         {mobileMenuOpen ? (<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />) : (<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />)}
@@ -44,18 +60,15 @@ export default function Navbar() {
                 </button>
             </div>
 
+            {/* MOBILE MENU DROPDOWN */}
             {mobileMenuOpen && (
                 <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-1 shadow-inner flex flex-col">
-                    <button onClick={() => navigateTo('/')} className="w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home</button>
-                    <div className="border-t border-slate-100 dark:border-slate-800 my-1"></div>
-
-                    <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider px-3 pt-2">Tools</p>
-                    <button onClick={() => navigateTo('/convert')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Convert Image</button>
-                    <button onClick={() => navigateTo('/compress')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Compress Image</button>
-                    <button onClick={() => navigateTo('/resize')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Social Resize</button>
-
-                    <div className="border-t border-slate-100 dark:border-slate-800 my-1"></div>
-                    <button onClick={() => navigateTo('/about')} className="w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">About</button>
+                    <button onClick={() => navigateTo('/')} className="w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Home</button>
+                    <div className="border-t border-slate-100 dark:border-slate-800 my-2"></div>
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider px-3 pt-1 pb-2">Tools</p>
+                    <button onClick={() => navigateTo('/convert')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Convert Image</button>
+                    <button onClick={() => navigateTo('/compress')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Compress Image</button>
+                    <button onClick={() => navigateTo('/resize')} className="w-full text-left py-2 px-6 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Image Resizer</button>
                 </div>
             )}
         </nav>

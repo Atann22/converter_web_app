@@ -109,9 +109,9 @@ export default function ResizePage() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-6 sm:py-13 -mt-6 sm:-mt-8">
-            <h1 className="text-lg sm:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-100 text-center">Resize Image</h1>
-            <p className="text-xs mb-5 sm:text-sm font-medium text-slate-600 dark:text-slate-400 text-center">
+        <div className="max-w-4xl mx-auto px-8 sm:px-4 py-20 sm:py-20">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-100 text-center">Resize Image</h1>
+            <p className="text-sm sm:text-base mb-5 font-medium text-slate-600 dark:text-slate-400 text-center">
                 Upload an image and resize it using presets or custom dimensions in seconds.
             </p>
 
