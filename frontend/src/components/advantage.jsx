@@ -1,9 +1,9 @@
 export default function Advantage() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:divide-y-0 md:divide-x divide-slate-300 dark:divide-slate-800 items-stretch transition-colors duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 2xl:gap-12 md:divide-y-0 md:divide-x divide-slate-300 dark:divide-slate-800 items-stretch transition-colors duration-300">
             <AdvantageProps
                 icon={
-                    <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 70 70" fill="none">
+                    <svg className="w-10 h-10 sm:w-12 sm:h-12 2xl:w-16 2xl:h-16" viewBox="0 0 70 70" fill="none">
                         <path d="M51.8 31.0041L26.25 61.2499L32.4917 37.9166H20.5625C20.0726 37.9499 19.5822 37.8591 19.1368 37.6524C18.6914 37.4458 18.3054 37.13 18.0145 36.7344C17.7236 36.3389 17.5373 35.8762 17.4729 35.3895C17.4084 34.9027 17.4679 34.4076 17.6458 33.9499L27.0667 10.6166C27.3077 10.0475 27.7153 9.56458 28.2358 9.23142C28.7564 8.89826 29.3656 8.7304 29.9833 8.7499H42.6417C43.1315 8.71654 43.6219 8.8074 44.0673 9.01404C44.5127 9.22069 44.8988 9.53644 45.1896 9.93203C45.4805 10.3276 45.6668 10.7902 45.7313 11.277C45.7957 11.7638 45.7362 12.2589 45.5583 12.7166L39.9583 26.2499H49.5833C50.1303 26.2589 50.6637 26.4216 51.1226 26.7193C51.5816 27.017 51.9475 27.4378 52.1787 27.9336C52.4099 28.4295 52.4969 28.9803 52.43 29.5232C52.363 30.0661 52.1447 30.5793 51.8 31.0041Z" stroke="#2563EB" stroke-width="5.83333" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 }
@@ -14,7 +14,7 @@ export default function Advantage() {
 
             <AdvantageProps
                 icon={
-                    <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 70 70">
+                    <svg className="w-10 h-10 sm:w-12 sm:h-12 2xl:w-16 2xl:h-16" viewBox="0 0 70 70">
                         <path d="M8.75 13.125C8.75 12.476 8.55756 11.8416 8.19701 11.302C7.83646 10.7624 7.324 10.3419 6.72443 10.0935C6.12486 9.84517 5.46511 9.78019 4.82861 9.9068C4.19211 10.0334 3.60745 10.3459 3.14856 10.8048C2.68967 11.2637 2.37716 11.8484 2.25055 12.4849C2.12394 13.1214 2.18892 13.7811 2.43727 14.3807C2.68562 14.9803 3.10619 15.4927 3.64579 15.8533C4.18539 16.2138 4.81978 16.4063 5.46875 16.4063C6.3387 16.4053 7.17274 16.0593 7.78789 15.4441C8.40304 14.829 8.74905 13.995 8.75 13.125ZM5.46875 14.2188C5.25243 14.2188 5.04096 14.1546 4.8611 14.0344C4.68123 13.9142 4.54104 13.7434 4.45826 13.5436C4.37547 13.3437 4.35382 13.1238 4.39602 12.9116C4.43822 12.6995 4.54239 12.5046 4.69535 12.3516C4.84832 12.1986 5.0432 12.0945 5.25537 12.0523C5.46754 12.0101 5.68745 12.0317 5.88731 12.1145C6.08717 12.1973 6.25799 12.3375 6.37817 12.5173C6.49835 12.6972 6.5625 12.9087 6.5625 13.125C6.56213 13.415 6.44677 13.6929 6.24173 13.898C6.0367 14.103 5.75872 14.2184 5.46875 14.2188Z" fill="#F59E0B" />
                         <path d="M41.5625 26.25C42.7706 26.25 43.75 25.2706 43.75 24.0625C43.75 22.8544 42.7706 21.875 41.5625 21.875C40.3544 21.875 39.375 22.8544 39.375 24.0625C39.375 25.2706 40.3544 26.25 41.5625 26.25Z" fill="#F59E0B" />
                         <path d="M26.25 26.25C27.4581 26.25 28.4375 25.2706 28.4375 24.0625C28.4375 22.8544 27.4581 21.875 26.25 21.875C25.0419 21.875 24.0625 22.8544 24.0625 24.0625C24.0625 25.2706 25.0419 26.25 26.25 26.25Z" fill="#F59E0B" />
@@ -35,7 +35,7 @@ export default function Advantage() {
 
             <AdvantageProps
                 icon={
-                    <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 70 70" fill="none">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 2xl:w-14 2xl:h-14" viewBox="0 0 70 70" fill="none">
                         <g clip-path="url(#clip0_232_100)">
                             <path d="M63.8864 0H6.11359C2.73679 0 0 2.73679 0 6.11359V24.5957V63.8863C0 67.2631 2.73679 70 6.11359 70H45.4043H63.8864C67.2632 70 70 67.2632 70 63.8863V6.11359C70 2.73679 67.2632 0 63.8864 0ZM6.11359 65.3331C5.31608 65.3331 4.66675 64.6838 4.66675 63.8863V29.2623H40.7377V65.3331H6.11359ZM65.3333 63.8863C65.3333 64.6839 64.6839 65.3331 63.8864 65.3331H45.4043V27.7881L53.0229 20.1705L58.0326 25.179C58.3072 25.4548 58.7207 25.5366 59.0795 25.3888C59.4384 25.2406 59.672 24.8897 59.672 24.4999L59.6732 11.1813C59.6732 10.6526 59.2436 10.2222 58.7127 10.2222L45.3917 10.2198C45.0032 10.2198 44.6522 10.4546 44.5041 10.8123C44.355 11.1724 44.4369 11.5846 44.7116 11.8604L49.7223 16.8713L41.9988 24.5958H4.66675V6.11359C4.66675 5.31608 5.31608 4.66675 6.11359 4.66675H63.8863C64.6838 4.66675 65.3331 5.31623 65.3331 6.11359V63.8863H65.3333Z" fill="#F43F5E" />
                         </g>
@@ -57,15 +57,15 @@ export default function Advantage() {
 
 function AdvantageProps(props) {
     return (
-        <div className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center p-5 gap-4 md:gap-0">
-            <div className={`shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-0 md:mb-6 ${props.bgColor} transition-colors duration-300`}>
+        <div className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center p-5 2xl:p-10 gap-4 md:gap-0">
+            <div className={`shrink-0 w-16 h-16 md:w-20 md:h-20 2xl:w-28 2xl:h-28 rounded-full flex items-center justify-center mb-0 md:mb-6 ${props.bgColor} transition-all duration-300`}>
                 {props.icon}
             </div>
             <div className="flex-1">
-                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mb-1 md:mb-2">
+                <h3 className="text-base md:text-lg 2xl:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1 md:mb-2 2xl:mb-4 transition-all">
                     {props.title}
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs md:mx-auto">
+                <p className="text-sm md:text-base 2xl:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs md:mx-auto transition-all">
                     {props.desc}
                 </p>
             </div>
