@@ -50,7 +50,7 @@ function ToolsProps(props) {
     const navigate = useNavigate()
 
     return (
-        <div className={`group border-2 border-slate-400 ${props.hvrColor} bg-slate-50/50 rounded-2xl p-5 2xl:p-8 shadow-sm hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50 transition-all flex flex-col min-h-40 sm:min-h-56 2xl:min-h-72 justify-between`}>
+        <div className={`group border-2 border-slate-400 ${props.hvrColor} bg-slate-50/50 rounded-2xl p-5 2xl:p-8 shadow-sm hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50 transition-all flex flex-col min-h-40 sm:min-h-56 2xl:min-h-72 justify-between cursor-pointer`}>
             <div className="flex items-center gap-2 sm:gap-3 2xl:gap-5 mb-2 sm:mb-4 2xl:mb-6">
                 <span className="text-2xl transition-transform duration-300 group-hover:scale-110 origin-left">{props.icon}</span>
                 <h3 className="text-lg sm:text-xl 2xl:text-2xl font-bold text-slate-800 dark:text-slate-100">{props.title}</h3>
@@ -60,7 +60,7 @@ function ToolsProps(props) {
             </div>
             <button
                 onClick={() => navigate(props.to)}
-                className={`w-full py-2.5 2xl:py-3.5 rounded-lg text-white text-xs sm:text-sm 2xl:text-base font-semibold flex items-center justify-center gap-1.5 2xl:gap-2 transition-all shadow-sm ${props.btnColor}`}
+                className={`w-full py-2.5 2xl:py-3.5 rounded-lg text-white text-xs sm:text-sm 2xl:text-base font-semibold flex items-center justify-center gap-1.5 2xl:gap-2 transition-all shadow-sm cursor-pointer ${props.btnColor}`}
             >
                 {props.btnText}
                 <svg className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
