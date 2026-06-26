@@ -102,29 +102,29 @@ export default function CompressPage() {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-8 sm:px-4 py-20 sm:py-20 ">
-            <h1 className="text-2xl sm:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-100 text-center">Compress Image</h1>
-            <p className="text-sm sm:text-base mb-5 font-medium text-slate-600 dark:text-slate-400 text-center">Upload an image and reduce its file size in seconds.</p>
+        <div className="max-w-4xl 2xl:max-w-6xl mx-auto px-8 sm:px-4 py-20 sm:py-20 2xl:py-32 transition-all">
+            <h1 className="text-2xl sm:text-3xl 2xl:text-5xl font-bold mb-3 text-slate-800 dark:text-slate-100 text-center transition-all">Compress Image</h1>
+            <p className="text-sm sm:text-base 2xl:text-xl mb-5 2xl:mb-16 font-medium text-slate-600 dark:text-slate-400 text-center transition-all">Upload an image and reduce its file size in seconds.</p>
 
-            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-4 sm:mt-9">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-5 sm:p-8 2xl:p-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 2xl:gap-16 mt-4 sm:mt-9 transition-all">
                 {/* --- LEFT --- */}
                 <div>
                     {resultUrl ? (
-                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-slate-200 dark:border-slate-700 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40 p-6">
-                            <div className="w-full max-h-45 overflow-hidden rounded-xl flex items-center justify-center mb-4 shadow-sm bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-1">
-                                <img src={resultUrl} alt="preview" className="max-w-full max-h-42.5 object-contain rounded-lg" />
+                        <div className="w-full min-h-65 sm:min-h-80 2xl:min-h-100 flex flex-col items-center justify-center border border-dashed border-slate-200 dark:border-slate-700 rounded-2xl bg-slate-50/50 dark:bg-slate-950/40 p-6">
+                            <div className="w-full max-h-45 2xl:max-h-64 overflow-hidden rounded-xl flex items-center justify-center mb-4 shadow-sm bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 p-1">
+                                <img src={resultUrl} alt="preview" className="max-w-full max-h-42.5 2xl:max-h-60 object-contain rounded-lg" />
                             </div>
 
-                            <span className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 mb-1 text-center px-2 truncate max-w-full">
+                            <span className="text-xs sm:text-sm 2xl:text-base font-bold text-slate-600 dark:text-slate-300 mb-1 text-center px-2 truncate max-w-full">
                                 {compressedSizeText ? `Original: ${getFileSize()} → Compressed: ${compressedSizeText}` : `File Size: ${getFileSize()}`}
                             </span>
 
-                            <span className="text-sm sm:text-base font-bold text-green-800 dark:text-green-700">Completed</span>
+                            <span className="text-sm sm:text-base 2xl:text-lg font-bold text-green-800 dark:text-green-700">Completed</span>
                         </div>
                     ) : status !== null ? (
-                        <div className="w-full min-h-65 sm:min-h-80 flex flex-col items-center justify-center border border-dashed border-indigo-200 dark:border-indigo-900 rounded-2xl bg-indigo-50/30 dark:bg-indigo-950/20 p-6">
-                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600 dark:border-indigo-400 mb-4"></div>
-                            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 animate-pulse">
+                        <div className="w-full min-h-65 sm:min-h-80 2xl:min-h-100 flex flex-col items-center justify-center border border-dashed border-indigo-200 dark:border-indigo-900 rounded-2xl bg-indigo-50/30 dark:bg-indigo-950/20 p-6">
+                            <div className="animate-spin rounded-full h-10 w-10 2xl:h-14 2xl:w-14 border-b-2 border-indigo-600 dark:border-indigo-400 mb-4"></div>
+                            <span className="text-sm 2xl:text-base font-semibold text-indigo-600 dark:text-indigo-400 animate-pulse">
                                 {dynamicMessage}
                             </span>
                         </div>
@@ -141,15 +141,15 @@ export default function CompressPage() {
                 </div>
 
                 {/* --- RIGHT --- */}
-                <div className="flex flex-col justify-center pt-6 md:pt-4 border-t md:border-t-0 md:border-l md:pl-8 border-slate-100 dark:border-slate-800">
+                <div className="flex flex-col justify-center pt-6 md:pt-4 border-t md:border-t-0 md:border-l md:pl-8 2xl:pl-16 border-slate-100 dark:border-slate-800">
                     {!resultUrl ? (
                         <div>
                             <div className="relative mb-5 sm:mb-6 inline-block w-full">
-                                <button type="button" onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 shadow-sm outline-none hover:border-slate-300 dark:hover:border-slate-700 transition-all flex items-center justify-between cursor-pointer">
+                                <button type="button" onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 2xl:py-4 text-xs sm:text-sm 2xl:text-base font-medium text-slate-500 dark:text-slate-400 shadow-sm outline-none hover:border-slate-300 dark:hover:border-slate-700 transition-all flex items-center justify-between cursor-pointer">
                                     <span className={quality ? "font-bold text-slate-700 dark:text-slate-200" : ""}>
                                         {quality ? quality : "Choose Quality"}
                                     </span>
-                                    <span className="text-slate-400 text-xs transition-transform duration-200" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
+                                    <span className="text-slate-400 text-xs 2xl:text-sm transition-transform duration-200" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>▼</span>
                                 </button>
 
                                 {isDropdownOpen && (
@@ -161,7 +161,7 @@ export default function CompressPage() {
                                                     key={opt}
                                                     type="button"
                                                     onClick={() => { setQuality(opt); setResultUrl(null); setIsDropdownOpen(false); }}
-                                                    className={`w-full text-center px-4 py-2.5 text-xs sm:text-sm font-bold transition-all block cursor-pointer ${quality === opt
+                                                    className={`w-full text-center px-4 py-3 2xl:py-4 text-xs sm:text-sm 2xl:text-base font-bold transition-all block cursor-pointer ${quality === opt
                                                         ? 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 font-extrabold'
                                                         : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-indigo-600 dark:hover:text-indigo-400'
                                                         }`}
@@ -176,7 +176,7 @@ export default function CompressPage() {
                             <button
                                 onClick={handleCompress}
                                 disabled={!file || !quality || status !== null}
-                                className={`w-full py-3 rounded-xl font-medium text-white text-xs sm:text-sm transition-all cursor-pointer ${(!file || !quality) 
+                                className={`w-full py-3 2xl:py-4 rounded-xl font-medium text-white text-xs sm:text-sm 2xl:text-base transition-all cursor-pointer ${(!file || !quality) 
                                     ? 'bg-slate-300 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed' 
                                     : 'bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 shadow-md shadow-indigo-100 dark:shadow-none'}`}
                             >
@@ -184,17 +184,17 @@ export default function CompressPage() {
                             </button>
                         </div>
                     ) : (
-                        <div className="flex flex-col gap-3.5 w-full max-w-60 mx-auto items-center">
-                            <button type="button" onClick={handleResetAll} className="w-full bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight cursor-pointer">
+                        <div className="flex flex-col gap-3.5 2xl:gap-6 w-full max-w-60 mx-auto items-center">
+                            <button type="button" onClick={handleResetAll} className="w-full bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 dark:text-slate-400 font-medium py-3 px-4 2xl:py-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all text-center shadow-sm leading-tight cursor-pointer">
                                 Compress Another Image
                             </button>
                             <a
                                 href={resultUrl || "#"}
                                 download={`compressed_${file ? file.name : 'image'}`}
-                                className="w-full bg-green-700 dark:bg-green-600 hover:bg-green-800 dark:hover:bg-green-500 text-white font-medium py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                                className="w-full bg-green-700 dark:bg-green-600 hover:bg-green-800 dark:hover:bg-green-500 text-white font-medium py-3 2xl:py-4 px-4 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm 2xl:text-base transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
                             >
                                 <span>Download</span>
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                                <svg className="w-4 h-4 2xl:w-5 2xl:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                 </svg>
                             </a>
