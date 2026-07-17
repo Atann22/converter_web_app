@@ -75,7 +75,7 @@ export default function CompressPage() {
             setResultUrl(downloadUrl)
         } catch (error) {
             console.error("Error while compressing image:", error)
-            alert("Failed to convert image. Please make sure the backend server is running and CORS is allowed.")
+            alert("Failed to compress image.")
             setStatus(null)
         }
     }
