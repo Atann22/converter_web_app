@@ -82,8 +82,8 @@ export default function ResizePage() {
             setStatus(null)
             setResultUrl(downloadUrl)
         } catch (error) {
-            console.error("Error while compressing image:", error)
-            alert("Failed to convert image. Please make sure the backend server is running and CORS is allowed.")
+            console.error("Error while resizing image:", error)
+            alert("Failed to resize image.")
             setStatus(null)
         }
     }
