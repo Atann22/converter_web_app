@@ -22,4 +22,5 @@ jobs:
             cd /opt/converter_web_app
             git pull origin main
             docker compose up -d --build
+            docker exec converter_nginx -s reload
             docker image prune -f
